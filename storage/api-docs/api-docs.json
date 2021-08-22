@@ -1,0 +1,397 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Wafi App",
+        "version": "0.1"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000/"
+        }
+    ],
+    "paths": {
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Wafi app"
+                ],
+                "summary": "Login | route('login')",
+                "description": "Login ",
+                "operationId": "a3b306d14572d1f4bd6c064b3233e7b8",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "description": "Login",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "email": "mark@example.com",
+                                    "password": "i am mark"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successfully"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "Wafi app"
+                ],
+                "summary": "Login | route('register')",
+                "description": "Login ",
+                "operationId": "8a56853624e025573120a09a4c75d468",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "description": "Login",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "name": "mark",
+                                    "email": "mark@example.com",
+                                    "password": "i am mark"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successfully"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/add-account": {
+            "post": {
+                "tags": [
+                    "Wafi app"
+                ],
+                "summary": "Add user account | route('add-account')",
+                "description": "Add user account ",
+                "operationId": "1a5581a465846afdd96dad37c9e8622c",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "description": "Add user account",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "account_number": {
+                                        "type": "integer"
+                                    },
+                                    "account_type": {
+                                        "type": "string"
+                                    },
+                                    "bank_name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "account_number": "0009134433",
+                                    "account_type": "SAVINGS ACCOUNT",
+                                    "bank_name": "J P MORGAN"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successfully"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/add-fund-to-account": {
+            "post": {
+                "tags": [
+                    "Wafi app"
+                ],
+                "summary": "Fund user account | route('add-fund-to-account')",
+                "description": "Fund user account ",
+                "operationId": "ccad146c7319d7958bc79a0703073e48",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "description": "Fund user account",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "account_number": {
+                                        "type": "integer"
+                                    },
+                                    "amount": {
+                                        "type": "float"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "account_number": "0009134433",
+                                    "amount": 50000
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successfully"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/send-money": {
+            "post": {
+                "tags": [
+                    "Wafi app"
+                ],
+                "summary": "Send money to user | route('send-money')",
+                "description": "Send money to user",
+                "operationId": "4be1afde7c55b42db58d71e918843888",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "description": "Send money to user",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "account_number": {
+                                        "type": "integer"
+                                    },
+                                    "amount": {
+                                        "type": "float"
+                                    },
+                                    "sender_account_type": {
+                                        "type": "string"
+                                    },
+                                    "sender_bank_name": {
+                                        "type": "string"
+                                    },
+                                    "receiver_account_number": {
+                                        "type": "string"
+                                    },
+                                    "receiver_account_type": {
+                                        "type": "string"
+                                    },
+                                    "receiver_bank_name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "account_number": "0009134433",
+                                    "amount": 50000,
+                                    "sender_account_type": "SAVINGS ACCOUNT",
+                                    "sender_bank_name": "J P MORGAN",
+                                    "receiver_account_number": "22099002",
+                                    "receiver_account_type": "SAVINGS ACCOUNT",
+                                    "receiver_bank_name": "Bank of America"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successfully"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/check-balance": {
+            "get": {
+                "tags": [
+                    "Wafi app"
+                ],
+                "summary": "Check account balance | route('check-balance')",
+                "description": "Check account balance",
+                "operationId": "5692e4134c1a4893b744dc067b338400",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "description": "Check account balance",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "account_number": {
+                                        "type": "integer"
+                                    },
+                                    "account_type": {
+                                        "type": "string"
+                                    },
+                                    "bank_name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "account_number": "22099002",
+                                    "account_type": "SAVINGS ACCOUNT",
+                                    "bank_name": "Bank of America"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successfully"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
